@@ -21,12 +21,12 @@ Quando cadastro um novo usuário ${tipo_usuario} pela tela de login
 
 Logar no sistema com dados válidos
     Wait Until Element Is Visible     ${Login.input_email}
-    Input Text    ${Login.input_email}    user1738239866375@testing.com
-    Input Text    ${Login.input_senha}    teste
+    Input Text    ${Login.input_email}    ${USER.admin_user}
+    Input Text    ${Login.input_senha}    ${USER.admin_password}
     Click Button    ${Login.button_entrar}
 
 Acessar o sistema
-    Open Browser    https://front.serverest.dev/    browser=Chrome    
+    Open Browser    ${TESTE.front_test}    browser=Chrome    
     Maximize Browser Window
 
 Acessar a tela de cadastro de usuário pela página de login
@@ -65,8 +65,8 @@ Então vejo que o usuário ${tipo_usuario} foi cadastrado com sucesso
 ### API ###
 
 Validar login pela API
-    ${email}    Set Variable    user1738239866375@testing.com
-    ${password}    Set Variable    teste
+    ${email}    Set Variable    ${USER.admin_user}
+    ${password}    Set Variable    ${USER.admin_password}
     ${status}    Set Variable    200
 
     ${RESPONSE}    Fazer login com ${email}, ${password} e ${status}
