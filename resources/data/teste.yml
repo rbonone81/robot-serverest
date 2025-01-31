@@ -1,0 +1,28 @@
+TESTE: 
+  host_teste: 'https://serverest.dev'
+
+# URL
+  urlPostCadUsuarios: '/usuarios'
+  urlGetLogin: '/login'
+  urlProdutos: '/produtos'
+  
+
+# BODY 
+  bodyPostTeste: '{{
+                    "nome": "{nome}",
+                    "email": "{email}",
+                    "password": "{password}",
+                    "administrador": "{administrador}"
+                  }}'
+
+  bodyGetLogin: '{{
+                    "email": "{email}",
+                    "password": "{password}"
+                  }}'
+  
+  bodyCardProd: '{{
+                    "nome": "{nome}",
+                    "preco": "200",
+                    "descricao": "{descricao}",
+                    "quantidade": "100"
+                  }}'
