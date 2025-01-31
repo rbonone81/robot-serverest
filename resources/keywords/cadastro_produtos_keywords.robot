@@ -57,7 +57,6 @@ Cadastrar um produto pela API ${token}
     ${BODY}            Format String        ${TESTE.bodyCardProd}
         ...    nome=${nome_prod_g}
         ...    descricao=${descr_g}
-
     Create Session    alias=api_teste     url=${TESTE.host_teste}    headers=${HEADERS}    auth=None            disable_warnings=True
     ${RESPONSE}       Post On Session     alias=api_teste    url=${URL}            data=${BODY}         expected_status=201
 

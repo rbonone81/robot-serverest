@@ -2,6 +2,7 @@
 Resource    ../../setups/main.robot
 
 *** Keywords ***
+### WEB ###
 Então vejo que o usuário acessou a home do sistema
     Validar acesso na home do sistema
     

@@ -7,6 +7,7 @@ ${nome_g}
 ${senha_g}
 
 *** Keywords ***
+### WEB ###
 Criar massa de usuário
     ${temp}     Generate Random String  5   [LETTERS]    
     Set Global Variable    ${email_g}    testenovousuario${temp}@teste.com
@@ -75,17 +76,14 @@ Cadastrar usuário pela API com ${nome}, ${email}, ${password}, ${administrador}
         ...    email=${email}
         ...    password=${password}
         ...    administrador=${administrador}
-
     Create Session    alias=api_teste     url=${TESTE.host_teste}    headers=${HEADERS}    auth=None            disable_warnings=True
     ${RESPONSE}       Post On Session     alias=api_teste    url=${URL}            data=${BODY}         expected_status=${status}
 
     RETURN    ${RESPONSE.json()}
 
 Buscar usuário pelo id ${id_usuario}
-
     ${URL}             Format String        ${TESTE.urlPostCadUsuarios}/${id_usuario}
     ${HEADERS}         Create Dictionary    Content-Type=application/json
-
     Create Session    alias=api_teste     url=${TESTE.host_teste}    headers=${HEADERS}    auth=None            disable_warnings=True
     ${RESPONSE}       Get On Session     alias=api_teste    url=${URL}        expected_status=200
 

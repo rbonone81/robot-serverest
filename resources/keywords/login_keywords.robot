@@ -7,6 +7,7 @@ ${email_usu}    testenovousuario
 ${senha_usu}    testenovousuario
 
 *** Keywords ***
+### WEB ###
 Dado que acesso a página de login
     Acessar o sistema
 
@@ -16,8 +17,6 @@ Quando faço o login no sistema
 Quando cadastro um novo usuário ${tipo_usuario} pela tela de login
     Acessar a tela de cadastro de usuário pela página de login
     Cadastrar novo usuário ${tipo_usuario}
-
-
 
 Logar no sistema com dados válidos
     Wait Until Element Is Visible     ${Login.input_email}
@@ -63,14 +62,12 @@ Então vejo que o usuário ${tipo_usuario} foi cadastrado com sucesso
     END
 
 ### API ###
-
 Validar login pela API
     ${email}    Set Variable    ${USER.admin_user}
     ${password}    Set Variable    ${USER.admin_password}
     ${status}    Set Variable    200
 
     ${RESPONSE}    Fazer login com ${email}, ${password} e ${status}
-
     Should Be Equal As Strings    ${RESPONSE}[message]    Login realizado com sucesso
 
 Fazer login com ${email}, ${password} e ${status}
@@ -79,7 +76,6 @@ Fazer login com ${email}, ${password} e ${status}
     ${BODY}            Format String        ${TESTE.bodyGetLogin}
         ...    email=${email}
         ...    password=${password}
-
     Create Session    alias=api_teste     url=${TESTE.host_teste}    headers=${HEADERS}    auth=None            disable_warnings=True
     ${RESPONSE}       Post On Session     alias=api_teste    url=${URL}            data=${BODY}         expected_status=${status}
     
