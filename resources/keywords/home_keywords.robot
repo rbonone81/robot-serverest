@@ -5,6 +5,7 @@ Resource    ../../setups/main.robot
 ### WEB ###
 Então vejo que o usuário acessou a home do sistema
     Validar acesso na home do sistema
+    Fazer logout
     
 Validar acesso na home do sistema
     Wait Until Element Is Visible    ${Home.label1}
@@ -26,3 +27,8 @@ Acessar a página de cadastro de usuários
 Acessar a página de cadastro de produtos
     Wait Until Element Is Visible    ${Home.btn_cad_prod}
     Click Element    ${Home.btn_cad_prod}
+
+Fazer logout
+    Wait Until Element Is Visible    ${Home.button_logout}
+    Click Button    ${Home.button_logout}
+    Validar página de login

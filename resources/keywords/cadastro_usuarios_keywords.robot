@@ -25,6 +25,7 @@ Quando cadastro um novo usuário admin
 
 Então vejo que o cadastro do usuário foi feito com sucesso
     Validar sucesso no cadastro do usuário
+    Fazer logout
 
 Cadastrar usuário admin
     Criar massa de usuário

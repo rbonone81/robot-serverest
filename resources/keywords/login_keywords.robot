@@ -28,6 +28,11 @@ Acessar o sistema
     Open Browser    ${TESTE.front_test}    browser=Chrome    
     Maximize Browser Window
 
+Validar página de login
+    Wait Until Element Is Visible    ${Login.input_email}
+    Element Should Be Visible    ${Login.input_senha}
+    Element Should Be Visible    ${Login.button_entrar}
+
 Acessar a tela de cadastro de usuário pela página de login
     Wait Until Element Is Visible    ${Login.lnk_cadastrar}
     Click Element    ${Login.lnk_cadastrar}
@@ -60,6 +65,7 @@ Então vejo que o usuário ${tipo_usuario} foi cadastrado com sucesso
     ELSE
         Validar acesso na home do cliente
     END
+    Fazer logout
 
 ### API ###
 Validar login pela API

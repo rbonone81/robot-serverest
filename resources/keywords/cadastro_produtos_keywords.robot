@@ -36,6 +36,7 @@ Cadastrar novo produto
 
 Então vejo que o cadastro do produto foi feito com sucesso
     Validar sucesso no cadastro do produto
+    Fazer logout
 
 Validar sucesso no cadastro do produto
     Wait Until Element Is Visible    ${Cad_Produtos.tab_produtos}
