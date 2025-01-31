@@ -4,10 +4,10 @@ Library    String
 Library    RequestsLibrary
 
 ### Pages ###
-Resource    ../resources/pages/login_page.robot
-Resource    ../resources/pages/home_page.robot
-Resource    ../resources/pages/cadastro_usuarios_page.robot
-Resource    ../resources/pages/cadastro_produtos_page.robot
+Resource    ../resources/keywords/login_keywords.robot
+Resource    ../resources/keywords/home_keywords.robot
+Resource    ../resources/keywords/cadastro_usuarios_keywords.robot
+Resource    ../resources/keywords/cadastro_produtos_keywords.robot
 
 ### Data ###
 Variables    ../resources/data/teste.yml
