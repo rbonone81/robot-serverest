@@ -11,6 +11,7 @@ Resource    ../resources/pages/cadastro_produtos_page.robot
 
 ### Data ###
 Variables    ../resources/data/teste.yml
+Variables    ../resources/data/user.yml
 
 ### Locators ###
 Resource    ../resources/locators/login_locators.resource
